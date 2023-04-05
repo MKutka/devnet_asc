@@ -1,11 +1,13 @@
 from ncclient import manager
 import xml.dom.minidom
 
-router = {"host": "sandbox-iosxe-recomm-1.cisco.com", "port": "22",
-          "username": "developer", "password": "C1sco12345"}
+router = {"host": "sandbox-iosxe-latest-1.cisco.com", 
+          "port": "830", 
+          "username": "admin", 
+          "password": "C1sco12345"}
 
 netconf_filter = """
-<filter>
+<filter xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
  <interface xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
   <interface>
     <name>GigabitEthernet2</name>
@@ -31,4 +33,3 @@ with manager.connect(host=router["host"], port=router["port"],
         print("*" * 25 + 'Break' + "*" * 50)
 
         print('*' * 50)
-    m.close_session()

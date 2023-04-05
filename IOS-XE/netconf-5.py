@@ -38,14 +38,14 @@ with manager.connect(host=router["host"], port=router["port"],
 #XMLTODICT for converting xml output to python dictionary
 interface_python = xmltodict.parse(interface_netconf.xml)["rpc-reply"]["data"]
 pprint(interface_python)
-name = interface_python["interfaces-state"]["interface"]["name"]["#text"]
+name = interface_python["interfaces-state"]["interface"]["name"]
 print(name)
 
 config = interface_python["interfaces"]["interface"]
 op_state = interface_python["interfaces-state"]["interface"]
 
 print("Start")
-print(f"Name: {config['name']['#text']}")
+print(f"Name: {config['name']}")
 print(f"Description: {config['description']}")
 print(f"Packets In {op_state['statistics']['in-unicast-pkts']}")
 

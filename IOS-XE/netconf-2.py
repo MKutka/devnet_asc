@@ -1,7 +1,9 @@
 from ncclient import manager
 
-router = {"host": "sandbox-iosxe-recomm-1.cisco.com", "port": "22",
-          "username": "developer", "password": "C1sco12345"}
+router = {"host": "sandbox-iosxe-latest-1.cisco.com", 
+          "port": "830", 
+          "username": "admin", 
+          "password": "C1sco12345"}
 
 with manager.connect(host=router["host"], port=router["port"], 
                      username=router["username"], password=router["password"], 
@@ -9,4 +11,3 @@ with manager.connect(host=router["host"], port=router["port"],
     for capability in m.server_capabilities:
         print('*' * 50)
         print(capability)
-    m.close_session()
