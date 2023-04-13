@@ -31,7 +31,7 @@ url = f"https://{vars.host}/api/node/mo/sys/intf/phys-[eth1/39].json"
 
 payload = "{\n    \"l1PhysIf\":{\n        \"attributes\":{\n            \"descr\":\"Python API Test\"\n        }\n    }\n}"
 headers = {
-  'Authorization': 'Basic bWt1dGthOkIwYkBmM3R0MjMxNCE=',
+  'Authorization': vars.auth,
   'Content-Type': 'text/plain',
 }
 
