@@ -15,8 +15,7 @@ payload = json.dumps({
 })
 headers = {
   'Content-Type': 'application/json',
-  'Authorization': 'Basic bWt1dGthOkIwYkBmM3R0MjMxNCE=',
-  'Cookie': 'APIC-cookie=SlFlzhaCa3GUCh5784GCOmDYZD0fMVTkf+r1ssb4vzYbxyBOIQdlO1ZaTfZZIO22WND2YR/8rAze3LDjNHx9rR2WQbW6uNnJKNzVV5v5ivekTEwujQ/CasOxaie+Dr4GmgCHbqUeZ+zCCKNdViXOvQtQhE1jNE0KKZQrIAd0i8MloYc3oGQDaRFJIKp+W5Uz'
+  'Authorization': vars.auth
 }
 
 response = requests.post(url, headers=headers, data=payload, verify=False).json()
